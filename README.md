@@ -13,11 +13,16 @@
   <a name="types--primitives"></a><a name="1.1"></a>
   - [1.1](#types--primitives) **Tests**: Running the E2E tests
 	
-	- You should always select something using the data-wms-selector attribute with the exception of custom elements in other libraries like Kendo.  Our components require you to specify data-wms-selector so it should be available everywhere.
+	- The easiest way to write and update tests is to use cypress command that will run and show you the UI as you do
+	- node or some other mechanism will be used to run the CI/CD tests or to run them in their entirety
 	
 
     ```javascript
-    describe('Cypress Tests for ')
+    // good
+    npx cypress open --env STAGE=luigi
+    
+    // bad
+    node app.js
     ```
 
 ## Tests
@@ -30,6 +35,7 @@
 
     ```javascript
     describe('Cypress Tests for Orders', function(){
+    
   	       describe('Filter Tests', function(){
 		    it('should have a date filter field', function(){
 	    
