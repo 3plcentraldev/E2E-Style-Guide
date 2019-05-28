@@ -35,16 +35,15 @@
   - [2.1](#references--prefer-const) Visual Assertions
 
     - Visual assertions help you determine if something is visually what you expect and helps you navigate your flow.  For example you may need to wait til something is visible before clicking it
-	- Visual assertions require a valid selection
+	- Visual assertions require a valid selection, shoulds will wait until the condition is true before moving on
 	
     ```javascript
     // bad
-    var a = 1;
-    var b = 2;
+    cy.wait(5000)
+    cy.get('[data-wms-selector="Warehouse_MainMenu"]').should('be.visible')
 
     // good
-    const a = 1;
-    const b = 2;
+    cy.get('[data-wms-selector="Warehouse_MainMenu"]').should('be.visible')
     ```
 
 
