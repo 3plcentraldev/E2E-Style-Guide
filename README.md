@@ -7,6 +7,7 @@
   2. [Tests](#tests)
   3. [Selections](#selection)
   4. [Visual Assertions](#vassertions)
+  5. [Clicking](#clicking)
 
 ## Running
 
@@ -97,5 +98,28 @@
 
     ```
 
+
+**[⬆ back to top](#table-of-contents)**
+
+## Clicking
+
+  <a name="references--prefer-const"></a><a name="5.1"></a>
+  - [5.1](#references--prefer-const) Clicking https://docs.cypress.io/api/commands/click.html#Syntax
+
+    - Clicking is pretty simple, however you should make sure your expectations or correct before trying
+	
+    ```javascript
+    // bad
+    cy.get('[data-wms-selector="Warehouse_MainMenu"]').click()
+
+    // good
+    cy.get('[data-wms-selector="Warehouse_MainMenu"]').should('be.visible').click()
+    ```
+
+    - Normally this should be enough, however there may be times where you need to force the UI to click something, whether it is showing or not.  Sometimes you may run into a situation, where it is showing as visible but for whatever reason cypress has a problem clicking it, in that case you should use force: true
+
+    ```javascript
+    cy.get('[data-wms-selector="Warehouse_MainMenu"]').should('be.visible').click({ force: true })
+    ```
 
 **[⬆ back to top](#table-of-contents)**
