@@ -32,7 +32,7 @@
 ## Visual Assertions
 
   <a name="references--prefer-const"></a><a name="2.1"></a>
-  - [2.1](#references--prefer-const) Visual Assertions https://docs.cypress.io/api/commands/wait.html#Syntax
+  - [2.1](#references--prefer-const) Visual Assertions https://docs.cypress.io/api/commands/should.html#Syntax
 
     - Visual assertions help you determine if something is visually what you expect and helps you navigate your flow.  For example you may need to wait til something is visible before clicking it
 	- Visual assertions require a valid selection, shoulds will wait until the condition is true before moving on
@@ -46,6 +46,14 @@
     cy.get('[data-wms-selector="Warehouse_MainMenu"]').should('be.visible')
     ```
 
+    ```javascript
+    // common usages    
+    cy.get('[data-wms-selector="Warehouse_MainMenu"]').should('be.visible')
+    cy.get('[data-wms-selector="Warehouse_MainMenu"]').should('be.disabled')
+    cy.get('[data-wms-selector="Warehouse_MainMenu"]').should('be.enabled')
+    cy.get('[data-wms-selector="Warehouse_MainMenu"]').should('have.css', 'font-family')
+
+    ```
 
 
 **[⬆ back to top](#table-of-contents)**
