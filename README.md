@@ -61,13 +61,13 @@
 
     ```javascript
     // bad
-	cy.get('#Warehouse_MainMenu');
+    cy.get('#Warehouse_MainMenu');
 	
-	// bad
-	cy.get('.Warehouse');
+    // bad
+    cy.get('.Warehouse');
 	
-	// good
-	cy.get('[data-wms-selector="Warehouse_MainMenu"]');
+    // good
+    cy.get('[data-wms-selector="Warehouse_MainMenu"]');
     ```
 
 **[⬆ back to top](#table-of-contents)**
