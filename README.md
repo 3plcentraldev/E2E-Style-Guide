@@ -32,7 +32,7 @@
 ## Visual Assertions
 
   <a name="references--prefer-const"></a><a name="2.1"></a>
-  - [2.1](#references--prefer-const) Visual Assertions
+  - [2.1](#references--prefer-const) Visual Assertions https://docs.cypress.io/api/commands/wait.html#Syntax
 
     - Visual assertions help you determine if something is visually what you expect and helps you navigate your flow.  For example you may need to wait til something is visible before clicking it
 	- Visual assertions require a valid selection, shoulds will wait until the condition is true before moving on
