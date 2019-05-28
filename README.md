@@ -1,49 +1,52 @@
 # 3PLCentral E2E Style Guide
 
-* A mostly reasonable approach to JavaScript 
+* A mostly reasonable approach to E2E 
 
 ## Table of Contents
 
-  1. [Types](#types)
+  1. [Selections](#selection)
+  2. [Visual Assertions](#vassertions)
 
 
-## Types
+## Selections
 
   <a name="types--primitives"></a><a name="1.1"></a>
-  - [1.1](#types--primitives) **Primitives**: When you access a primitive type you work directly on its value.
-
-    - `string`
-    - `number`
-    - `boolean`
-    - `null`
-    - `undefined`
-    - `symbol`
+  - [1.1](#types--primitives) **Selections**: When you select something from the DOM
+	
+	- You should always select something using the data-wms-selector attribute with the exception of custom elements in other libraries like Kendo.  Our components require you to specify data-wms-selector so it should be available everywhere.
+	
 
     ```javascript
-    const foo = 1;
-    let bar = foo;
-
-    bar = 9;
-
-    console.log(foo, bar); // => 1, 9
+    // bad
+	cy.get('#Warehouse_MainMenu');
+	
+	// bad
+	cy.get('.Warehouse');
+	
+	// good
+	cy.get('[data-wms-selector="Warehouse_MainMenu"]');
     ```
 
-    - Symbols cannot be faithfully polyfilled, so they should not be used when targeting browsers/environments that don’t support them natively.
+**[⬆ back to top](#table-of-contents)**
 
-  <a name="types--complex"></a><a name="1.2"></a>
-  - [1.2](#types--complex)  **Complex**: When you access a complex type you work on a reference to its value.
+## Visual Assertions
 
-    - `object`
-    - `array`
-    - `function`
+  <a name="references--prefer-const"></a><a name="2.1"></a>
+  - [2.1](#references--prefer-const) Visual Assertions
 
+    - Visual assertions help you determine if something is visually what you expect and helps you navigate your flow.  For example you may need to wait til something is visible before clicking it
+	- Visual assertions require a valid selection
+	
     ```javascript
-    const foo = [1, 2];
-    const bar = foo;
+    // bad
+    var a = 1;
+    var b = 2;
 
-    bar[0] = 9;
-
-    console.log(foo[0], bar[0]); // => 9, 9
+    // good
+    const a = 1;
+    const b = 2;
     ```
+
+
 
 **[⬆ back to top](#table-of-contents)**
