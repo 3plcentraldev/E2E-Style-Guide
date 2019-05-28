@@ -177,19 +177,10 @@
     cy.request('POST', wms.getBaseUrl() + '/WebUI/Settings/ImportOrderPreferences/GetPreferences', myobj)
     .then((response) => {
          // You would write actions in here
-	 // You might check to see if it returned 200 by something like this
-	 expect(response.status).to.eq(200);
+         // You might check to see if it returned 200 by something like this
+         expect(response.status).to.eq(200);
     });
     ```
 
-    ```javascript
-    // common usages    
-    cy.get('[data-wms-selector="Warehouse_MainMenu"]').should('be.visible')
-    cy.get('[data-wms-selector="Warehouse_MainMenu"]').should('be.disabled')
-    cy.get('[data-wms-selector="Warehouse_MainMenu"]').should('be.enabled')
-    cy.get('[data-wms-selector="Warehouse_MainMenu"]').should('have.css', 'font-family')
-
-    ```
-
-
+   
 **[⬆ back to top](#table-of-contents)**
