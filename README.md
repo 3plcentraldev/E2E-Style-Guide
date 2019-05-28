@@ -138,6 +138,12 @@
 	cy.get('[data-wms-selector="Warehouse_MainMenu"]').should('be.visible').select('456');
 	
     ```
+
+    ```javascript
+	// to do selecting grid value
+	
+    ```
+
     
       <a name="references--prefer-const"></a><a name="5.3"></a>
   - [5.3](#references--prefer-const) Selecting https://docs.cypress.io/api/commands/type.html#Syntax
