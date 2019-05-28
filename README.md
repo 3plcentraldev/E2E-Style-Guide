@@ -30,14 +30,14 @@
 
     ```javascript
     describe('Cypress Tests for Orders', function(){
-        describe('Filter Tests', function(){
-	    it('should have a date filter field', function(){
+  	      describe('Filter Tests', function(){
+		    it('should have a date filter field', function(){
 	    
-	    })
-	});
-	describe('Grid Tests', function(){
+		    })
+		});
+		describe('Grid Tests', function(){
 	
-	});
+		});
     })
     ```
 
