@@ -122,4 +122,37 @@
     cy.get('[data-wms-selector="Warehouse_MainMenu"]').should('be.visible').click({ force: true })
     ```
 
+  <a name="references--prefer-const"></a><a name="5.2"></a>
+  - [5.2](#references--prefer-const) Selecting https://docs.cypress.io/api/commands/select.html#Syntax
+
+    - Selecting can select the name or value, name being what is displayed to the browser and value is the underlining data
+	
+    ```javascript
+	<select>
+	  <option value="456">apples</option>
+	  <option value="457">oranges</option>
+	  <option value="458">bananas</option>
+	</select>
+	
+	cy.get('[data-wms-selector="Warehouse_MainMenu"]').should('be.visible').select('apples');
+	cy.get('[data-wms-selector="Warehouse_MainMenu"]').should('be.visible').select('456');
+	
+    ```
+    
+      <a name="references--prefer-const"></a><a name="5.3"></a>
+  - [5.3](#references--prefer-const) Selecting https://docs.cypress.io/api/commands/type.html#Syntax
+
+    - You can use type to actually fill out an element, that being said it will ADD to it, so the preference is you always clear the value of the field first then type in the totality, this basically means you replace what is there with what you want
+	
+    ```javascript
+	// bad
+	cy.get('[data-wms-selector="Warehouse_MainMenu"]').type('Iroquais Drive');
+	
+	// good
+	cy.get('[data-wms-selector="Warehouse_MainMenu"]').should('be.visible').clear().type('Iroquais Drive');
+	
+    ```
+
+
+
 **[⬆ back to top](#table-of-contents)**
