@@ -1,6 +1,6 @@
-# 3PLCentral E2E Style Guide() {
+# 3PLCentral E2E Style Guide
 
-* A mostly reasonable approach to JavaScript *
+* A mostly reasonable approach to JavaScript 
 
 ## Table of Contents
 
