@@ -8,6 +8,7 @@
   3. [Selections](#selection)
   4. [Visual Assertions](#vassertions)
   5. [Actions (clicking/selecting/inputing)](#actions)
+  6. [Calling API](#api)
 
 ## Running
 
@@ -159,6 +160,36 @@
 	
     ```
 
+
+
+**[⬆ back to top](#table-of-contents)**
+
+## API
+
+  <a name="references--prefer-const"></a><a name="6.1"></a>
+  - [6.1](#references--prefer-const) API https://docs.cypress.io/api/commands/request.html#Syntax
+
+    - It is often the case that it is best to call the API instead of using the UI to set up data for your tests.  In other words if you need to have an item setup to test something in receipts, it would be better to use the API under the hood to setup your data as needed, then to try to do it through the UI, since you are not trying to test Items you are trying to test receipts
+    - You should generally call the url of the stage you are on, in other words, wms.getBaseUrl would return localhost if you are local etc, and something else if it is ran on luigi, but the second parameter is just a url
+	
+    ```javascript
+    let myobj = {"orderId": 5};
+    cy.request('POST', wms.getBaseUrl() + '/WebUI/Settings/ImportOrderPreferences/GetPreferences', myobj)
+    .then((response) => {
+         // You would write actions in here
+	 // You might check to see if it returned 200 by something like this
+	 expect(response.status).to.eq(200);
+    });
+    ```
+
+    ```javascript
+    // common usages    
+    cy.get('[data-wms-selector="Warehouse_MainMenu"]').should('be.visible')
+    cy.get('[data-wms-selector="Warehouse_MainMenu"]').should('be.disabled')
+    cy.get('[data-wms-selector="Warehouse_MainMenu"]').should('be.enabled')
+    cy.get('[data-wms-selector="Warehouse_MainMenu"]').should('have.css', 'font-family')
+
+    ```
 
 
 **[⬆ back to top](#table-of-contents)**
