@@ -7,7 +7,7 @@
   2. [Tests](#tests)
   3. [Selections](#selection)
   4. [Visual Assertions](#vassertions)
-  5. [Clicking](#clicking)
+  5. [Actions (clicking/selecting/inputing)](#actions)
 
 ## Running
 
@@ -101,7 +101,7 @@
 
 **[⬆ back to top](#table-of-contents)**
 
-## Clicking
+## Actions
 
   <a name="references--prefer-const"></a><a name="5.1"></a>
   - [5.1](#references--prefer-const) Clicking https://docs.cypress.io/api/commands/click.html#Syntax
