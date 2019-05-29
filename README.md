@@ -140,8 +140,17 @@
 	
     ```
 
+    - Some kendo dropdowns may require you to do something different
+	- This would be used when using a kendo virtual dropdown that has a search bar as well in it
     ```javascript
-	// to do selecting grid value
+	cy.get('[data-wms-selector="DropdownSelector"]').should('be.visible').then((_elem) => {
+	   _elem.parents('span').click();
+	   cy.get('input[aria-owns="SkuDropDownListReceiptAddLineItem_listbox"]').type(itemName, {
+              force: true
+           });
+	
+	});
+
 	
     ```
 
