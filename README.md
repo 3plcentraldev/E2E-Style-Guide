@@ -80,7 +80,8 @@
 
     - Visual assertions help you determine if something is visually what you expect and helps you navigate your flow.  For example you may need to wait til something is visible before clicking it
 	- Visual assertions require a valid selection, shoulds will wait until the condition is true before moving on
-	
+	- Sometimes a input field might not be in view if you are trying to see it so you might see an error like this 
+	- the element is not visible because it has CSS property: 'position: fixed' and its being covered by another element
     ```javascript
     // bad
     cy.wait(5000)
@@ -88,6 +89,7 @@
 
     // good
     cy.get('[data-wms-selector="Warehouse_MainMenu"]').should('be.visible')
+    cy.get('[data-wms-selector="Warehouse_MainMenu"]').scrollIntoView().should('be.visible')
     ```
 
     ```javascript
