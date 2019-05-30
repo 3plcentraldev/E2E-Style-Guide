@@ -5,7 +5,7 @@
 ## Table of Contents
   1. [Running](#running)
   2. [Tests](#tests)
-  3. [Selections](#selection)
+  3. [Get](#selection)
   4. [Visual Assertions](#vassertions)
   5. [Actions (clicking/selecting/inputing)](#actions)
   6. [Calling API](#api)
@@ -52,7 +52,7 @@
 
 **[⬆ back to top](#table-of-contents)**
 
-## Selections
+## Get
 
   <a name="types--primitives"></a><a name="3.1"></a>
   - [3.1](#types--primitives) **Selections**: When you select something from the DOM
