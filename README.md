@@ -9,6 +9,7 @@
   4. [Visual Assertions](#vassertions)
   5. [Actions (clicking/selecting/inputing)](#actions)
   6. [Calling API](#api)
+  7. [Grids](#grids)
 
 ## Running
 
@@ -191,6 +192,26 @@
          // You might check to see if it returned 200 by something like this
          expect(response.status).to.eq(200);
     });
+    ```
+
+   
+**[⬆ back to top](#table-of-contents)**
+
+## Grids
+
+  <a name="references--prefer-const"></a><a name="7.1"></a>
+  - [7.1](#references--prefer-const) Grids
+
+    - Use grids can be difficult, here is a easy command to select the first element in a grid, it is often best to filter to just one element in a grid and select it
+
+	
+    ```javascript
+    // right click for context menu
+     cy.get('[data-wms-selector="findCustomerGrid"]').scrollIntoView().find('.k-grid-content tbody tr').eq(0).should('be.visible').trigger('contextmenu');
+     
+     
+    // click row
+    cy.get('[data-wms-selector="findCustomerGrid"]').scrollIntoView().find('.k-grid-content tbody tr').eq(0).should('be.visible').click();
     ```
 
    
